@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fábio Garboggini">
+    <title>Gerenciamento de Contatos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Contatos</h1>
+        <button id="alternar-tema">Alternar Tema</button>
+    </header>
+
+    <main>
+        <section class="formulario-secao">
+            <h2>Adicionar Novo Contato</h2>
+            <form id="formulario-contato">
+                <input type="text" id="nome" placeholder="Nome" required pattern="[a-zA-ZÀ-ÿ\s]+" title="O nome deve conter apenas letras.">
+                <input type="tel" id="telefone" placeholder="Telefone (DD) XXXXX-XXXX" required pattern="\d{2}\d{9}" title="O telefone deve ter o formato: DDD + 9 dígitos.">
+                <input type="email" id="email" placeholder="E-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Insira um e-mail válido.">
+                <button type="submit">Adicionar Contato</button>
+            </form>
+        </section>
+
+        <section class="lista-secao">
+            <h2>Lista de Contatos</h2>
+            <input type="text" id="buscar" placeholder="Buscar contatos...">
+            <table id="tabela-contatos">
+                <thead>
+                    <tr>
+                        <th onclick="ordenarContatos('nome')">Nome</th>
+                        <th onclick="ordenarContatos('telefone')">Telefone</th>
+                        <th onclick="ordenarContatos('email')">E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
